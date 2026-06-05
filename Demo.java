@@ -217,27 +217,89 @@ public class Demo {
 
         int n = 10;
         // ap: 2, 5, 8, 11, 14, 17, .....
-        // here: starting(a) = 2, difference(d): 3  
+        // here: starting(a) = 2, difference(d): 3
         // 2 + (n - 1)3 => 2+3n-3 => 3n-1
-        for (int i = 2; i<=3*n-1; i=i+3) {
+        for (int i = 2; i <= 3 * n - 1; i = i + 3) {
             System.out.print(i + " ");
         }
 
         System.out.println();
 
-        //optimized:
-        int A = 2, d=3;
-        for(int i=1; i<=n; i++){
+        // optimized:
+        int A = 2, d = 3;
+        for (int i = 1; i <= n; i++) {
             System.out.print(A + " ");
             A = A + d;
         }
 
         System.out.println();
 
-
         // CHar - asciiValue
-        for(int i = 65; i<=90; i++) {
-            System.out.println((char)i + " " + i);
+        for (int i = 65; i <= 90; i++) {
+            System.out.println((char) i + " " + i);
+        }
+        // GP;
+        // an = a.rⁿ⁻¹
+
+        int aa = 10;
+        int r = 3;
+        for (int i = 1; i <= n; i++) {
+            System.out.print(aa + " ");
+            aa *= r;
+        }
+        System.out.println();
+
+        // factor:
+        int fac = 50;
+        for (int i = 1; i <= fac; i++) {
+            if (fac % i == 0) {
+                System.out.println(i);
+            }
+        }
+
+        System.out.println("Optimized - squareRoot");
+        for (int i = 1; i <= Math.sqrt(fac); i++) {
+            if (fac % i == 0) {
+                System.out.println(i + " - " + (fac / i)); // paired-wise
+            }
+        }
+
+        // PRIME NO.:
+        int primeValue = 191;
+        boolean isPrime = true;
+        // for(int i = 2; i<=primeValue-1; i++) {
+        for (int i = 2; i <= Math.sqrt(primeValue); i++) { // OPTIMIZED
+            if (primeValue % i == 0) {
+                isPrime = false;
+            }
+        }
+        if (primeValue == 1 || primeValue == 0) {
+            System.out.println("Not prime, nor non-prime");
+        } else if (isPrime == false) {
+            System.out.println(primeValue + " is not prime...");
+        } else {
+            System.out.println(primeValue + " is prime...");
+        }
+
+        // BETTER VERSION OF FINDING PRIME or not?
+        int primeValues = 191;
+        if (primeValues <= 1) {
+            System.out.println("Not prime, nor non-prime");
+        } else {
+            boolean isPrimes = true;
+
+            for (int i = 2; i <= Math.sqrt(primeValues); i++) {
+                if (primeValues % i == 0) {
+                    isPrimes = false;
+                    break;
+                }
+            }
+
+            if (isPrimes) {
+                System.out.println(primeValues + " is prime...");
+            } else {
+                System.out.println(primeValues + " is not prime...");
+            }
         }
 
     }
