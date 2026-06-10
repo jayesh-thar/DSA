@@ -1,4 +1,3 @@
-// import java.util.Scanner;
 
 public class Demo {
     public static void main(String[] args) {
@@ -300,6 +299,45 @@ public class Demo {
             } else {
                 System.out.println(primeValues + " is not prime...");
             }
+        }
+
+        // WHILE LOOP: Generally user when condition are more than one
+
+        /*
+         * initialized
+         * while(condition) {
+         * // logic + print
+         * increment
+         * }
+         */
+
+        int ii = 0;
+        while (ii <= 10) {
+            System.out.println(ii);
+            ii++;
+        }
+
+        // count the no. of digit:
+        int numss = 10;
+        // int result = (numss/10);
+        // System.out.println(numss);
+        // System.out.println(result);
+        // System.out.println(result/10);
+        // System.out.println((result/10)/10);
+        // System.out.println(((result/10)/10)/10);
+        // System.out.println((((result/10)/10)/10)/10);
+        // NOTE's: For 'int', to remove the last digit then '/' || or to get less digit
+        // and same but not last digit
+        // and if one digit then result is: '0'
+        int count = 0;
+        if (numss == 0) {
+            System.out.println(1);
+        } else {
+            while (numss != 0) {
+                numss /= 10;
+                count++;
+            }
+            System.out.println(count);
         }
 
     }
