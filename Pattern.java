@@ -247,6 +247,83 @@ public class Pattern {
 
         System.out.println();
 
+
+        // vertical flip triangle
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                if(i+j > n) {
+                    System.out.print("* ");
+                } else {
+                    System.out.print("  ");
+                }
+            }
+            System.out.println();
+        }
+
+        System.out.println();
+
+        //horizontal flip triangle
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                if(i+j <= n+1) {
+                    System.out.print("* ");
+                } else {
+                    System.out.print("  ");
+                }
+            }
+            System.out.println();
+        }
+
+        System.out.println();
+
+        //method 2
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                if(i+j > n+1) {
+                    System.out.print("  ");
+                } else {
+                    System.out.print("* ");
+                }
+            }
+            System.out.println();
+        }
+
         
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                if(i+j > n) {
+                    System.out.print("* ");
+                } else {
+                    System.out.print("  ");
+                }
+            }
+            System.out.println();
+        }
+        System.out.println();
+
+        // multi nested-loop's:
+        for(int i = 1; i<=n; i++) {
+            for(int j = 1; j<=n-i; j++) { // 'n+1-i' -> diagonal and -1 to reduce one from every row   // space 
+                System.out.print("  ");
+            }
+            for(int j=1; j<=i; j++){ // star
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+
+        System.out.println();
+
+        //Rhombus
+        for(int i = 1; i<=n; i++) {
+            for(int j = 1; j<=n-i; j++) { // space 
+                System.out.print("  ");
+            }
+            for(int j=1; j<=n; j++){ // star
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+        System.out.println();
     }
 }
